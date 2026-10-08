@@ -1,0 +1,292 @@
+<!-- Created by Erion Nezha — © 2026 All rights reserved -->
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIF Shqip — Erion Nezha</title>
+<meta name="description" content="Galeri GIF-esh të animuara me CSS — kërko me tag-e shqip dhe ngarko të tutë.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<style id="appcss">
+/* ============ ERION NEZHA · ULTRA-PREMIUM THEME (shared) ============ */
+:root{
+  --bg0:#070b16; --bg1:#0b1124; --gold:#D4AF37; --gold2:#f3dd8f;
+  --ink:#eef1f7; --mut:#9aa3b8; --glass:rgba(255,255,255,.055);
+  --line:rgba(212,175,55,.22); --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  background:var(--bg0); color:var(--ink); min-height:100vh; overflow-x:hidden;
+}
+.bg-orbs{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.bg-orbs span{position:absolute;border-radius:50%;filter:blur(90px);opacity:.28;animation:drift 14s ease-in-out infinite alternate}
+.bg-orbs span:nth-child(1){width:520px;height:520px;left:-140px;top:-120px;background:radial-gradient(circle,#D4AF37,transparent 65%)}
+.bg-orbs span:nth-child(2){width:620px;height:620px;right:-180px;top:30%;background:radial-gradient(circle,#2b3f8f,transparent 65%);animation-delay:-5s}
+.bg-orbs span:nth-child(3){width:460px;height:460px;left:20%;bottom:-160px;background:radial-gradient(circle,#6b4fa1,transparent 65%);animation-delay:-9s}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.12)}}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.site-header{padding:64px 0 30px;text-align:center}
+.overline{letter-spacing:.42em;font-size:11px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.site-header h1{font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.15;
+  background:linear-gradient(120deg,#fff 20%,var(--gold2) 55%,var(--gold) 80%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.site-header p{color:var(--mut);max-width:640px;margin:14px auto 0;font-size:16px;line-height:1.65}
+.live-badge{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 18px;border-radius:999px;
+  border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px);font-size:13px;color:var(--gold2);letter-spacing:.08em}
+.live-badge i{width:9px;height:9px;border-radius:50%;background:#3ddc84;box-shadow:0 0 12px #3ddc84;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.demo-wrap{margin:26px 0 54px}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 24px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);padding:30px}
+.code-section{margin:0 0 60px}
+.code-section h2{font-size:24px;margin-bottom:6px}
+.code-section .sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0;align-items:center}
+.ctab{padding:10px 22px;border-radius:12px 12px 0 0;border:1px solid var(--line);border-bottom:none;cursor:pointer;
+  background:rgba(255,255,255,.03);color:var(--mut);font-size:14px;font-weight:600;letter-spacing:.04em;transition:.25s}
+.ctab.active{background:linear-gradient(180deg,rgba(212,175,55,.22),rgba(212,175,55,.06));color:var(--gold2)}
+.ctab:hover{color:var(--ink)}
+#copyBtn{margin-left:auto;padding:9px 20px;border-radius:10px;border:1px solid var(--line);cursor:pointer;
+  background:linear-gradient(120deg,var(--gold),#a8842a);color:#0a0e1a;font-weight:700;font-size:13px;transition:.25s}
+#copyBtn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(212,175,55,.35)}
+.codebox{border:1px solid var(--line);border-radius:0 14px 14px 14px;overflow:hidden;background:#0d1326}
+.codebox pre{margin:0;max-height:560px;overflow:auto}
+.codebox pre code{display:block;padding:22px;font-family:"Cascadia Code","Fira Code",Consolas,monospace;font-size:13.5px;line-height:1.7;background:transparent}
+.codebox pre::-webkit-scrollbar{width:10px;height:10px}
+.codebox pre::-webkit-scrollbar-thumb{background:rgba(212,175,55,.35);border-radius:8px}
+footer{text-align:center;padding:34px 20px 44px;color:var(--mut);font-size:14px;border-top:1px solid rgba(212,175,55,.14)}
+footer strong{color:var(--gold2)}
+/* ============ APP CSS (per projekt) ============ */
+
+/* ===== GIF SHQIP APP ===== */
+.gf-note{font-size:12.5px;color:var(--mut);margin-bottom:14px}
+.gf-note b{color:var(--gold2)}
+.gf-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.gf-search{flex:1;min-width:200px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--ink);font-size:15px;outline:none}
+.gf-search:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.15)}
+.gf-upload{padding:12px 20px;border-radius:12px;border:1px solid var(--line);background:linear-gradient(120deg,var(--gold),#a8842a);color:#0a0e1a;font-weight:800;cursor:pointer;font-size:14px;transition:.2s}
+.gf-upload:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(212,175,55,.35)}
+.gf-ghost{padding:12px 20px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--mut);cursor:pointer;font-weight:600;font-size:14px;transition:.2s}
+.gf-ghost:hover{color:var(--ink)}
+.gf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.gf-card{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0d1326;cursor:pointer;transition:.25s;animation:gfIn .4s ease}
+.gf-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 36px rgba(0,0,0,.5)}
+@keyframes gfIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+.gf-scene{height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;background:#0a0e1a}
+.gf-title{padding:10px 12px;font-size:13.5px;font-weight:600}
+/* --- skenat e animuara --- */
+.s-beat{font-size:70px;animation:gf-beat 1s ease-in-out infinite}
+@keyframes gf-beat{0%,100%{transform:scale(1)}25%{transform:scale(1.35)}45%{transform:scale(1.1)}}
+.s-bounce{font-size:70px;animation:gf-bounce .8s ease-in-out infinite}
+@keyframes gf-bounce{0%,100%{transform:translateY(-24px)}50%{transform:translateY(24px)}}
+.s-spin{font-size:70px;animation:gf-spin 2.5s linear infinite}
+@keyframes gf-spin{to{transform:rotate(360deg)}}
+.s-twinkle{font-size:70px;animation:gf-tw 1.4s ease-in-out infinite}
+@keyframes gf-tw{0%,100%{opacity:.25;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+.s-blink{font-size:70px;animation:gf-blink 1.1s steps(2) infinite}
+@keyframes gf-blink{50%{opacity:.1}}
+.s-pulse{font-size:70px;animation:gf-pulse 1.6s ease-in-out infinite;filter:drop-shadow(0 0 18px rgba(255,120,0,.8))}
+@keyframes gf-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+.s-wiggle{font-size:70px;animation:gf-wig .5s ease-in-out infinite}
+@keyframes gf-wig{0%,100%{transform:rotate(-18deg)}50%{transform:rotate(18deg)}}
+.s-bars{display:flex;gap:6px;align-items:center;height:80px}
+.s-bars span{width:12px;background:linear-gradient(180deg,var(--gold2),var(--gold));border-radius:6px;animation:gf-bar .9s ease-in-out infinite;transform-origin:center}
+.s-bars span:nth-child(1){height:34px;animation-delay:0s}
+.s-bars span:nth-child(2){height:66px;animation-delay:.15s}
+.s-bars span:nth-child(3){height:46px;animation-delay:.3s}
+.s-bars span:nth-child(4){height:78px;animation-delay:.45s}
+.s-bars span:nth-child(5){height:50px;animation-delay:.6s}
+@keyframes gf-bar{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1.35)}}
+.s-balloons{position:relative;width:100%;height:100%}
+.s-balloons i{position:absolute;bottom:-46px;font-size:44px;font-style:normal;animation:gf-rise 4s linear infinite}
+.s-balloons i:nth-child(1){left:16%}
+.s-balloons i:nth-child(2){left:46%;animation-delay:1.3s;font-size:58px}
+.s-balloons i:nth-child(3){left:74%;animation-delay:2.6s}
+@keyframes gf-rise{to{transform:translateY(-250px) rotate(12deg);opacity:0}}
+.s-confetti{position:relative;width:100%;height:100%}
+.s-confetti i{position:absolute;top:-16px;width:10px;height:14px;animation:gf-fall 2.6s linear infinite}
+.s-confetti i:nth-child(1){left:12%;background:#f3dd8f}
+.s-confetti i:nth-child(2){left:30%;background:#e5484d;animation-delay:.5s}
+.s-confetti i:nth-child(3){left:48%;background:#3ddc84;animation-delay:1s}
+.s-confetti i:nth-child(4){left:66%;background:#6aa8ff;animation-delay:1.5s}
+.s-confetti i:nth-child(5){left:84%;background:#c77dff;animation-delay:2s}
+@keyframes gf-fall{to{transform:translateY(210px) rotate(540deg)}}
+.s-wave{font-size:64px;animation:gf-wave 1.8s ease-in-out infinite}
+@keyframes gf-wave{0%,100%{transform:translateX(-14px) rotate(-8deg)}50%{transform:translateX(14px) rotate(8deg)}}
+.s-hourglass{font-size:70px;animation:gf-flip 2.2s ease-in-out infinite}
+@keyframes gf-flip{0%,100%{transform:rotate(0)}50%{transform:rotate(180deg)}}
+/* --- modali --- */
+.gf-modal{position:fixed;inset:0;background:rgba(3,5,12,.85);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;backdrop-filter:blur(6px)}
+.gf-modal.open{display:flex}
+.gf-modal-card{max-width:480px;width:100%;border-radius:18px;border:1px solid var(--line);background:#0d1326;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:gfIn .3s ease}
+.gf-modal-card h2{margin-bottom:10px;font-size:20px}
+.gf-preview{height:270px;display:flex;align-items:center;justify-content:center;background:#0a0e1a;border-radius:14px;margin-bottom:14px;overflow:hidden;border:1px solid var(--line)}
+.gf-preview .s-beat,.gf-preview .s-bounce,.gf-preview .s-spin,.gf-preview .s-twinkle,.gf-preview .s-blink,.gf-preview .s-pulse,.gf-preview .s-wiggle,.gf-preview .s-hourglass{font-size:120px}
+.gf-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.gf-tag{font-size:11.5px;color:var(--gold2);background:rgba(212,175,55,.12);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+.gf-embed{background:rgba(0,0,0,.45);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:monospace;font-size:12px;color:var(--gold2);margin:14px 0;word-break:break-all;max-height:110px;overflow:auto}
+.gf-actions{display:flex;gap:10px;flex-wrap:wrap}
+.gf-empty{text-align:center;color:var(--mut);padding:44px 10px;grid-column:1/-1;font-size:15px}
+
+@media(max-width:640px){.glass{padding:20px}.site-header{padding:44px 0 22px}}
+</style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span><span></span></div>
+
+<header class="site-header wrap">
+  <div class="overline">Erion Nezha · Web Projects</div>
+  <h1>GIF Shqip</h1>
+  <p>Galeri GIF-esh të animuara me CSS — kërko me tag-e shqip dhe ngarko të tutë.</p>
+  <div class="live-badge"><i></i> LIVE DEMO</div>
+</header>
+
+<main class="wrap">
+  <section class="demo-wrap">
+    <div class="glass" id="demo">
+
+<div class="gf-note">ℹ️ <b>Demo lokale</b> — animacionet janë CSS, jo file GIF.</div>
+<div class="gf-toolbar">
+  <input class="gf-search" id="gfSearch" type="text" placeholder="Kërko me tag-e shqip… (dashuri, qesh, sport, party)">
+  <button class="gf-upload" id="gfUploadBtn">📤 Ngarko GIF-in tënd</button>
+  <input type="file" id="gfFile" accept="image/*" style="display:none">
+</div>
+<div class="gf-grid" id="gfGrid"></div>
+<div class="gf-modal" id="gfModal">
+  <div class="gf-modal-card">
+    <div class="gf-preview" id="gfPreview"></div>
+    <h2 id="gfTitle"></h2>
+    <div class="gf-tags" id="gfTags"></div>
+    <div class="gf-embed" id="gfEmbed"></div>
+    <div class="gf-actions">
+      <button class="gf-upload" id="gfCopy">📋 Kopjo kodin HTML</button>
+      <button class="gf-ghost" id="gfClose">Mbyll</button>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <section class="code-section">
+    <h2>💻 Kodi Burim</h2>
+    <p class="sub">I gjithë kodi i këtij projekti — i lexueshëm, i kopjueshëm, gati për t'u mësuar.</p>
+    <div class="tabs">
+      <button class="ctab active" data-tab="html">HTML</button>
+      <button class="ctab" data-tab="css">CSS</button>
+      <button class="ctab" data-tab="js">JavaScript</button>
+      <button id="copyBtn">Kopjo kodin</button>
+    </div>
+    <div class="codebox"><pre><code id="codeView" class="language-html"></code></pre></div>
+  </section>
+</main>
+
+<footer>Krijuar nga <strong>Erion Nezha</strong> · © 2026 — Të gjitha të drejtat e rezervuara</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script id="appjs">
+
+(function(){
+var GIFS=[
+ {id:1,t:'Zemër që rreh',tags:['dashuri','zemër','romancë'],scene:'<div class="s-beat">❤️</div>',em:'❤️'},
+ {id:2,t:'Top që kërcen',tags:['sport','futboll','top'],scene:'<div class="s-bounce">⚽</div>',em:'⚽'},
+ {id:3,t:'Rërë kohe',tags:['kohë','pritje','loader'],scene:'<div class="s-hourglass">⏳</div>',em:'⏳'},
+ {id:4,t:'Bare muzikore',tags:['muzikë','party','audio'],scene:'<div class="s-bars"><span></span><span></span><span></span><span></span><span></span></div>',em:'🎵'},
+ {id:5,t:'Yll vezullues',tags:['yll','natë','magji'],scene:'<div class="s-twinkle">⭐</div>',em:'⭐'},
+ {id:6,t:'Valë deti',tags:['det','valë','pushime'],scene:'<div class="s-wave">🌊</div>',em:'🌊'},
+ {id:7,t:'Flakë zjarri',tags:['zjarr','flakë','energji'],scene:'<div class="s-pulse">🔥</div>',em:'🔥'},
+ {id:8,t:'Balona në qiell',tags:['party','festë','balona'],scene:'<div class="s-balloons"><i>🎈</i><i>🎈</i><i>🎈</i></div>',em:'🎈'},
+ {id:9,t:'Llambë ideje',tags:['ide','dritë','blink'],scene:'<div class="s-blink">💡</div>',em:'💡'},
+ {id:10,t:'Spiral rrotulluese',tags:['loader','rrotullim','hipnozë'],scene:'<div class="s-spin">🌀</div>',em:'🌀'},
+ {id:11,t:'Konfeti feste',tags:['festë','party','konfeti'],scene:'<div class="s-confetti"><i></i><i></i><i></i><i></i><i></i></div>',em:'🎉'},
+ {id:12,t:'Duartrokitje',tags:['qesh','duartrokitje','bravo'],scene:'<div class="s-wiggle">👏</div>',em:'👏'}
+];
+var query='',cur=null;
+function tagsHtml(g){return g.tags.map(function(t){return '<span class="gf-tag">'+t+'</span>';}).join('');}
+function render(){
+ var grid=document.getElementById('gfGrid'),html='';
+ for(var i=0;i<GIFS.length;i++){
+  var g=GIFS[i];
+  if(query&&(g.t+' '+g.tags.join(' ')).toLowerCase().indexOf(query)<0)continue;
+  html+='<div class="gf-card" data-id="'+g.id+'"><div class="gf-scene">'+g.scene+'</div><div class="gf-title">'+g.t+'</div></div>';
+ }
+ if(!html)html='<div class="gf-empty">😕 S\'u gjet asnjë GIF.<br>Provo një tag tjetër shqip.</div>';
+ grid.innerHTML=html;
+}
+function getG(id){for(var i=0;i<GIFS.length;i++)if(String(GIFS[i].id)===String(id))return GIFS[i];return null;}
+function embedFor(g){
+ return '<div style="display:inline-flex;align-items:center;justify-content:center;width:220px;height:220px;background:#0a0e1a;border-radius:16px;font-size:90px;">'+g.em+'</div>';
+}
+function openModal(id){
+ var g=getG(id);if(!g)return;cur=g;
+ document.getElementById('gfPreview').innerHTML=g.scene;
+ document.getElementById('gfTitle').textContent=g.t;
+ document.getElementById('gfTags').innerHTML=tagsHtml(g);
+ document.getElementById('gfEmbed').textContent=embedFor(g);
+ document.getElementById('gfCopy').textContent='📋 Kopjo kodin HTML';
+ document.getElementById('gfModal').classList.add('open');
+}
+document.getElementById('gfGrid').addEventListener('click',function(ev){
+ var card=ev.target.closest('.gf-card');
+ if(card)openModal(card.getAttribute('data-id'));
+});
+document.getElementById('gfSearch').addEventListener('input',function(ev){query=ev.target.value.trim().toLowerCase();render();});
+document.getElementById('gfClose').addEventListener('click',function(){document.getElementById('gfModal').classList.remove('open');});
+document.getElementById('gfModal').addEventListener('click',function(ev){if(ev.target===this)this.classList.remove('open');});
+document.addEventListener('keydown',function(ev){if(ev.key==='Escape')document.getElementById('gfModal').classList.remove('open');});
+document.getElementById('gfCopy').addEventListener('click',function(){
+ var b=this,code=embedFor(cur);
+ function done(t){b.textContent=t;setTimeout(function(){b.textContent='📋 Kopjo kodin HTML';},1600);}
+ if(navigator.clipboard&&navigator.clipboard.writeText){
+  navigator.clipboard.writeText(code).then(function(){done('✓ U kopjua!');},function(){done('Dështoi');});
+ }else{
+  var ta=document.createElement('textarea');ta.value=code;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');done('✓ U kopjua!');}catch(e){done('Dështoi');}
+  document.body.removeChild(ta);
+ }
+});
+document.getElementById('gfUploadBtn').addEventListener('click',function(){document.getElementById('gfFile').click();});
+document.getElementById('gfFile').addEventListener('change',function(ev){
+ var f=ev.target.files[0];if(!f)return;
+ var r=new FileReader();
+ r.onload=function(){
+  GIFS.unshift({id:'u'+Date.now(),t:f.name.replace(/\.[^.]+$/,''),tags:['ngarkuar','imazh'],scene:'<img src="'+r.result+'" style="max-width:100%;max-height:100%;object-fit:contain" alt="GIF i ngarkuar">',em:'🖼️'});
+  render();
+ };
+ r.readAsDataURL(f);ev.target.value='';
+});
+render();
+})();
+
+</script>
+<script>
+(function(){
+  var tabs={
+    html:{lang:"html",get:function(){return document.getElementById("demo").innerHTML.trim();}},
+    css:{lang:"css",get:function(){return document.getElementById("appcss").textContent.trim();}},
+    js:{lang:"javascript",get:function(){return document.getElementById("appjs").textContent.trim();}}
+  };
+  var view=document.getElementById("codeView"),cur="html";
+  function render(){
+    view.textContent=tabs[cur].get();
+    view.className="language-"+tabs[cur].lang;
+    if(window.hljs){delete view.dataset.highlighted;hljs.highlightElement(view);}
+    var bs=document.querySelectorAll(".ctab");
+    for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i].dataset.tab===cur);
+  }
+  var bs=document.querySelectorAll(".ctab");
+  for(var i=0;i<bs.length;i++)bs[i].addEventListener("click",function(){cur=this.dataset.tab;render();});
+  document.getElementById("copyBtn").addEventListener("click",function(){
+    var b=this,code=tabs[cur].get();
+    function done(t){b.textContent=t;setTimeout(function(){b.textContent="Kopjo kodin";},1600);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(function(){done("U kopjua ✓");},function(){done("Dështoi");});}
+    else{var ta=document.createElement("textarea");ta.value=code;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done("U kopjua ✓");}catch(e){done("Dështoi");}document.body.removeChild(ta);}
+  });
+  render();
+})();
+</script>
+</body>
+</html>
